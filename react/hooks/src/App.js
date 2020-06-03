@@ -56,4 +56,7 @@ function App() {
   );
 }
 
+// <input {...name} placeholder="whats your name" />
+// <input value={name.value} onChange={name.onChange} />
+
 export default App;
