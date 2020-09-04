@@ -40,7 +40,7 @@ console.log(db)
 
 
 let data = {
-	aa: 'aa'
+	01012345688: 'hello, message'
 };
 const set_doc = db.collection('users').doc('test').set(data);
 
