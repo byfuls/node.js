@@ -2,3 +2,23 @@ console: https://console.firebase.google.com/u/1/project/taste-firestore/firesto
 auth: https://console.cloud.google.com/apis => user auth info
 docu: https://firebase.google.com/docs/firestore/quickstart?authuser=1
 git: https://github.com/firebase/snippets-node/blob/d769695bd1159103e7c877849ccaccab3db37039/firestore/main/index.js#L122-L130
+
+
+
+
+[ functions trigger ]
+https://firebase.google.com/docs/firestore/extend-with-functions?hl=ko
+[ functions VPC (out networking) ]
+https://cloud.google.com/functions/docs/networking/connecting-vpc
+[ google cloud pub/sub guide ]
+https://cloud.google.com/functions/docs/tutorials/pubsub?hl=ko
+
+
+[ firebase ref ]
+https://jybaek.tistory.com/733
+
+[ firebase snapshot ]
+https://firebase.google.com/docs/firestore/query-data/listen?hl=ko
+
+[ firebase get data ]
+https://firebase.google.com/docs/firestore/query-data/get-data

@@ -16,13 +16,17 @@ var cli = new netcli.Socket();
 
 /* listen for any change on document 'alovelace' in collection 'users' */
 exports.watchDoc = functions.firestore.document('users/test').onWrite( async (change, context) => {
-	console.log('event occur');
+	console.log('[onWrite] event occur');
 	cli.setEncoding('utf8');
 	cli = await netcli.connect({port:60000, host:"52.77.222.175"}, async ()=>{
-		console.log('connect ok');
-		await cli.write('changed data');
-		console.log('write ok');
+		console.log('[onWrite] connect ok');
+		await cli.write('[onWrite] changed data');
+		console.log('[onWrite] write ok');
 		await cli.destroy();
+	}).on('error', (err)=>{
+	    console.log(`[onWrite] client socket error: ${JSON.stringify(err)}`);
+	}).on('timeout', ()=>{
+	    console.log('[onWrite] client socket timeout');
 	});
-	console.log('event done');
+	console.log('[onWrite] event done');
 });
