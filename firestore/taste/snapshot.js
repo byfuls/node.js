@@ -120,7 +120,7 @@ var eventAgent = eventAgent || {};
 				console.log(doc.id, '=>', j_doc);
 				console.log(`doc.sender => ${j_doc.sender}`);
 
-				let _col = _dest_col;
+				//let _col = _dest_col;
 				let _user = j_doc.sender;
 				let _friend = j_doc.receiver;
 				let _message = {
@@ -130,12 +130,14 @@ var eventAgent = eventAgent || {};
 					writer: j_doc.sender
 				};
 
-				console.log(_col);
+				console.log(_dest_col);
 				console.log(_user);
 				console.log(_friend);
 				console.log(_message);
-				update_event(_col, _user, _friend, _message);
-				//delete_doc(_col, doc.id);
+				update_event(_dest_col, _user, _friend, _message);
+
+				console.log(`${_col} document ${doc.id} will be deleted`);
+				delete_doc(_col, doc.id);
 			});
 		}, err => {
 			console.error(`[err] error message: ${err}`);
