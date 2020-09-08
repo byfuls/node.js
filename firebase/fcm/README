@@ -1,0 +1,8 @@
+[ guide ]
+o ref : https://firebase.google.com/docs/cloud-messaging/server
+
+[ git ]
+o ref : https://github.com/firebase/quickstart-nodejs/blob/22f229db69efd41ecb8f7d75155b11d7c35e2080/messaging/index.js#L22-L40
+
+[ env set ]
+export GOOGLE_APPLICATION_CREDENTIALS="path"
