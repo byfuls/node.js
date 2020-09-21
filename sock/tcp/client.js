@@ -17,7 +17,7 @@ cli = netcli.connect({port:2219, host:HOST}, ()=>{
 	console.log(`client socket closed: ${localPort}`)
 }).on('data', (data)=>{
 	console.log(`received data: (${data.length}) ${data}`);
-	cli.end();
+	//cli.end();
 }).on('end', ()=>{
 	console.log(`client socket end`);
 }).on('error', (err)=>{
