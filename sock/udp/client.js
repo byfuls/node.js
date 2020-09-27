@@ -17,12 +17,12 @@ client.send(sendingMsg, 2220, '127.0.0.1', err => {
 	}
 });
 
-const multiMsg1 = Buffer.from('hi');
-const multiMsg2 = Buffer.from('there');
-client.send([multiMsg1, multiMsg2], 2220, '127.0.0.1', err => {
-	if(err){
-		console.log(`send err: ${err}`);
-	}else{
-		console.log(`send ok`);
-	}
-});
+//const multiMsg1 = Buffer.from('hi');
+//const multiMsg2 = Buffer.from('there');
+//client.send([multiMsg1, multiMsg2], 2220, '127.0.0.1', err => {
+//	if(err){
+//		console.log(`send err: ${err}`);
+//	}else{
+//		console.log(`send ok`);
+//	}
+//});
