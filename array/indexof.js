@@ -14,3 +14,4 @@ console.log(ret3);
 const alpa4 = [1, 2, 3, 4, 5, 3, 7, 8];
 let ret4 = alpa4.indexOf(3, 3);
 console.log(ret4);
+console.log(alpa4[1]);
