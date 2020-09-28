@@ -21,7 +21,7 @@ var eventAgent = eventAgent || {};
         let _observer = db.collection(_col).doc(_doc)
         .onSnapshot(doc => {
             let j_doc = doc.data();
-            for(key in j_doc){
+            for(let key in j_doc){
                 console.log('------------ event occur ------------');
                 console.log(`[data] key         : ${key}`);
                 console.log(`[data] value       : ${j_doc[key]}`);
@@ -58,9 +58,10 @@ var eventAgent = eventAgent || {};
 		let _observer = db.collection(_col)
 		.onSnapshot(docs => {
             let _docs = docs.forEach(doc => {
-				//console.log(doc);
+				console.log(doc);
             	let j_doc = doc.data();
-            	for(key in j_doc){
+				console.log(doc.id);
+            	for(let key in j_doc){
             	    console.log('------------ event occur ------------');
             	    console.log(`[data] key         : ${key}`);
             	    console.log(`[data] value       : ${j_doc[key]}`);
@@ -157,18 +158,18 @@ var eventAgent = eventAgent || {};
 
     _ea.run = () => {
 		/* call watch document */
-		//watch_doc(_col, _doc);
+		//watch_doc("sms", "getkey");
 		/* call watch document with condition */
 		//watch_condition_docs(_col, ["aa", "==", "bb"]);
 		/* call watch collection */
-		//watch_col(_col);
+		watch_col("objects");
 		/* call delete document */
 		//delete_doc(_col, _doc);
 
 		//update_event("sms", "120", "112", {content: "gogogo", date: "20200904", type: "create", writer: "120"});
 		//get_docs("event_queue");
 		
-		watch_n_proceed("event_queue", "sms");
+		//watch_n_proceed("event_queue", "sms");
     };  
 })(eventAgent);
 eventAgent.run();
