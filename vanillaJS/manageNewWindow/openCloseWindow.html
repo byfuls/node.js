@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> top page </title>
+    <script>
+        window.onload = function() {
+            var w;
+            document.getElementById("js-open").onclick = function() {
+                w = open("newpage.html", "new page", "width=400, height=300");
+            };
+            document.getElementById("js-close").onclick = function() {
+                if(w) w.close();
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <p>
+        <input type="button" value="open" id="js-open">
+        <input type="button" value="close" id="js-close">
+    </p>
+</body>
+
+</html>
