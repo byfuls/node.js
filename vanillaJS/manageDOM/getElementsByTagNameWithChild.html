@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div>
+        <p class="important"> Document Object Model </p> 의 줄임말입니다.
+    </div>
+    <script>
+        var divs = document.getElementsByTagName("div");
+        var firstDivParas = divs[0].getElementsByTagName("p");
+        console.log(firstDivParas);
+        console.log(firstDivParas[0]);
+        console.log(firstDivParas[0].innerHTML);
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <a id="git" href="http://github.com"> github </a>
+
+    <script>
+        var gitNode = document.getElementById("git");
+        gitNode.setAttribute("href", "http://www.naver.com");
+        console.log(gitNode);
+
+        gitNode.href = "http://github.com";
+        console.log(gitNode);
+    </script>
+</body>
+
+</html>
