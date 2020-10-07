@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        window.onload = function(){
+            var element = document.getElementById("button");
+            element.addEventListener("click", ()=>{
+                console.log("Hello!");
+                element.removeEventListener("click", arguments.callee, false);
+            }, false);
+        }
+    </script>
+</head>
+
+<body>
+    <button id="button">button</button>
+</body>
+
+</html>
