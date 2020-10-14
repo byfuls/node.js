@@ -1,8 +1,9 @@
 "use strict";
-const serviceAccount = require('./cert/taste-firestore-f3cc55a6b2f1.json');
+const serviceAccount = require('./cert/taste-firestore-firebase-adminsdk-6o8ps-d3b8651193.json');
 const admin = require('firebase-admin');
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
+    credential: admin.credential.cert(serviceAccount),
+	databaseURL: "https://taste-firestore.firebaseio.com"
 });
 const db = admin.firestore();
 
@@ -84,6 +85,23 @@ var eventAgent = eventAgent || {};
 		});
 	};
 
+	let update_flag = (_col, _user, _friend, _f_id, flag) => {
+		let query = db.collection(_col).doc(_user);
+		let _ret = query
+		.set({})
+		.then(()=>{
+			query = query.collection("chats").doc(_friend);
+			_ret = query
+			.set({})
+			.then(async ()=>{
+				console.log("hi");
+				query = query.collection("messages").doc(_f_id);
+				_ret = await query.update({"status": flag});
+				console.log("complete");
+			});
+		});
+	};
+
 	let update_event = (_col, _user, _friend, _message) => {
 		let query = db.collection(_col).doc(_user)
 		let _ret = query
@@ -162,7 +180,7 @@ var eventAgent = eventAgent || {};
 		/* call watch document with condition */
 		//watch_condition_docs(_col, ["aa", "==", "bb"]);
 		/* call watch collection */
-		watch_col("objects");
+		//watch_col("objects");
 		/* call delete document */
 		//delete_doc(_col, _doc);
 
@@ -170,6 +188,8 @@ var eventAgent = eventAgent || {};
 		//get_docs("event_queue");
 		
 		//watch_n_proceed("event_queue", "sms");
+		
+		update_flag("sms", "112", "117", "Oq6imCmgrVQyNYXCAnK1", "complete");
     };  
 })(eventAgent);
 eventAgent.run();
